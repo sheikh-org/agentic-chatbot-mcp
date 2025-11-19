@@ -17,7 +17,12 @@
     "install:all": "npm install && npm run install:ai-sdk",
     "install:ai-sdk": "npm install @ai-sdk/google ai",
     "setup:mcp": "echo '{\"mcpServers\": {\"chrome-devtools\": {\"command\": \"npx\", \"args\": [\"chrome-devtools-mcp@latest\"]}}}' > mcp-config.json",
-    "test": "echo \"No tests specified\"",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:install": "npx playwright install",
+    "test:install:deps": "npx playwright install-deps",
     "clean": "rm -rf .next dist node_modules/.cache",
     "deploy": "npm run build && npm run start"
   },
@@ -43,6 +48,7 @@
     "zod": "^3.22.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.42.0",
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
